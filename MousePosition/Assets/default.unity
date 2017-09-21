@@ -421,6 +421,7 @@ MonoBehaviour:
   m_zAxisOffset: 10
   m_2dObject: {fileID: 288996622}
   m_3dObject: {fileID: 745227032}
+  m_wheelInputSensitivity: 5
 --- !u!4 &710804150
 Transform:
   m_ObjectHideFlags: 0

@@ -24,6 +24,10 @@ public class MousePositionController : MonoBehaviour {
     [SerializeField]
     private GameObject m_3dObject;
 
+    /// <summary>マウスホイールで m_zAxisOffset を調整する時の感度</summary>
+    [SerializeField]
+    private float m_wheelInputSensitivity = 5.0f;
+
     void Start () {
         /*  テキストを初期化する  */
         m_positionText2d.text = "";
@@ -47,5 +51,9 @@ public class MousePositionController : MonoBehaviour {
 
         if (Input.GetMouseButton(1))
             if (m_2dObject) m_2dObject.position = position;
+
+        /*  マウスホイールでカメラからの距離を変える    */
+        float wheelInput = Input.GetAxis("Mouse ScrollWheel");
+        m_zAxisOffset = m_zAxisOffset + m_wheelInputSensitivity * wheelInput;
     }
 }
